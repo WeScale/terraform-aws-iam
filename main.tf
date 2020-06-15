@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "role" {
 
     principals {
       type        = element(keys(var.principals), count.index)
-      identifiers =[var.principals[element(keys(var.principals), count.index)]]
+      identifiers = [var.principals[element(keys(var.principals), count.index)]]
     }
   }
 }
@@ -33,7 +33,7 @@ resource "aws_iam_role" "default" {
   tags                  = var.tags
 }
 resource "aws_iam_policy" "default" {
-  count       = var.enabled == "true" && length(var.policies)> 0 ? 1 : 0
+  count       = var.enabled == "true" && length(var.policies) > 0 ? 1 : 0
   name        = var.name_iam_policy
   description = var.policy_description
   policy      = module.policies.policies_result_document

@@ -1,5 +1,4 @@
 variable "name_iam_role" {
-  default     = ""
   description = "the Name of the role"
 }
 variable "name_iam_policy" {
@@ -11,7 +10,7 @@ variable "name_prefix" {
   description = "Creates a unique name beginning with the specified prefix"
 }
 variable "enabled" {
-  type = string
+  type    = string
   default = "true"
 }
 variable "force_detach_policies" {
@@ -28,25 +27,26 @@ variable "tags" {
   default     = {}
 }
 variable "policy_description" {
-  type = string
+  type        = string
   description = "policy description"
-  default = ""
+  default     = ""
 }
 
-variable "defined_policies" {
-  type = list(string)
-  description = "predifined arn policies to attatch"
-  default=[]
-}
 
 variable "principals" {
   type        = map
   description = "Map of service name as key and a list of ARNs to allow assuming the role as value"
-  default     = {}
+
 }
 
 
 variable "policies" {
-  type    = list(string)
-  default = []
+  type        = list(string)
+  description = " Json Policies to generate doc  "
+  default     = []
+}
+variable "defined_policies" {
+  type        = list(string)
+  description = "predifined arn policies to attatch"
+  default     = []
 }
