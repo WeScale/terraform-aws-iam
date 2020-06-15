@@ -2,7 +2,7 @@ variable "name_iam_role" {
   description = "the Name of the role"
 }
 variable "name_iam_policy" {
-  default     = ""
+  default     = "default"
   description = "the Name of the iam policy"
 }
 variable "name_prefix" {
