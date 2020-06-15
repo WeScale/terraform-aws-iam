@@ -17,11 +17,14 @@ data "aws_iam_policy_document" "role" {
   }
 }
 module "assume_role_policy" {
-  source             = "../terraform-aws-policies_collect-wsc/"
+
+  source  = "mehdi-wsc/policies_collect-wsc/aws"
+  version = "0.0.1"
   policies_documents = data.aws_iam_policy_document.role.*.json
 }
 module "policies" {
-  source             = "../terraform-aws-policies_collect-wsc/"
+  source  = "mehdi-wsc/policies_collect-wsc/aws"
+  version = "0.0.1"
   policies_documents = var.policies
 }
 

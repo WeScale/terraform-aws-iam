@@ -1,6 +1,6 @@
 # terraform-aws-iam
 
-- ``` terraform-aws-iam ``` is a Terraform module to create AWS Iam ROle 
+- ``` terraform-aws-iam ``` is a Terraform module to create AWS Iam ROle
 - it's an opensource module under GPL license
 
 ## Usage
