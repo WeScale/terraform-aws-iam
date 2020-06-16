@@ -15,13 +15,13 @@ data "aws_iam_policy_document" "role" {
   }
 }
 module "assume_role_policy" {
-  source  = "mehdi-wsc/policies_collect-wsc/aws"
-  version = "0.0.1"
+  source             = "mehdi-wsc/policies_collect-wsc/aws"
+  version            = "0.0.1"
   policies_documents = data.aws_iam_policy_document.role.*.json
 }
 module "policies" {
-  source  = "mehdi-wsc/policies_collect-wsc/aws"
-  version = "0.0.1"
+  source             = "mehdi-wsc/policies_collect-wsc/aws"
+  version            = "0.0.1"
   policies_documents = var.policies
 }
 resource "aws_iam_role" "default" {
@@ -38,7 +38,7 @@ resource "aws_iam_policy" "default" {
   policy      = module.policies.policies_result_document
 }
 resource "aws_iam_role_policy_attachment" "default" {
-  count      = var.enabled == "true" && length(var.policies) > 0 ? 1 : 0
+  count      = length(var.policies)
   role       = aws_iam_role.default.name
   policy_arn = aws_iam_policy.default[count.index].arn
 }
