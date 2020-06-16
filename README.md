@@ -6,7 +6,7 @@
 ## Usage
 
 ```
-module "sg-wsc" {
+module "iam-wsc" {
   source  = "mehdi-wsc/iam-wsc/aws"
   version = "0.0.1"
   principals = {
@@ -45,10 +45,12 @@ module "sg-wsc" {
 
 ## Output Variables:
 
-| name         | description          |
-|--------------|----------------------|
-| iam_id        | IAM ROLE id         |
-| iam_arn       | IAM ROLE arn        |
+| name                       | description                        |
+|----------------------------|------------------------------------|
+| iam_id                     | IAM ROLE id                        |
+| iam_arn                    | IAM ROLE arn                       |
+| iam_defined_attachements   | Data about defined attachements    |
+| iam_customize_attachements | Data about customize attachements  |
 
 
 ## License:
