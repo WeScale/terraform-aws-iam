@@ -1,5 +1,6 @@
 output "iam_id" {
-  value = aws_iam_role.default.id
+  value       = aws_iam_role.default.id
+  description = "IAM role  ID "
 }
 output "iam_arn" {
   value = aws_iam_role.default.arn
