@@ -7,8 +7,6 @@
 
 ```
 module "iam-wsc" {
-  source  = "mehdi-wsc/iam-wsc/aws"
-  version = "0.0.1"
   principals = {
     Service = "eks.amazonaws.com"
   }
